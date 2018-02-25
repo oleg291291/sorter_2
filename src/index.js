@@ -3,14 +3,21 @@ class Sorter {
     // your implementation
     this.arr = [];
 
-    this.compareNumeric = function compareNumeric(a, b) {
+this.compareNumeric = function compareNumeric(a, b) {
       if (a > b) return 1;
       if (a < b) return -1;
-
-
-
+    }
+this.REVERSE_COMPARATOR = function compareNumeric(b, a) {
+      if (a > b) return 1;
+      if (a < b) return -1;
     }
 
+
+  this.comparator = this.compareNumeric;
+
+    
+
+    
   }
 
   add(element) {
@@ -42,7 +49,7 @@ class Sorter {
     for (var i = 0; i < indicesSorted.length; i++) {
       selected.push(this.arr[indicesSorted[i]]);
     }
-    var sorted = selected.sort(this.compareNumeric);
+    var sorted = selected.sort(this.comparator);
     for (var k = 0; k < sorted.length; k++) {
       this.arr[indicesSorted[k]] = sorted[k];
     }
@@ -54,7 +61,7 @@ class Sorter {
   setComparator(compareFunction) {
     // your implementation
     
-      this.compareNumeric = compareFunction
+      this.comparator = this.REVERSE_COMPARATOR;
     
   }
 }
