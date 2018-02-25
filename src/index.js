@@ -61,7 +61,7 @@ this.REVERSE_COMPARATOR = function compareNumeric(b, a) {
   setComparator(compareFunction) {
     // your implementation
     
-      this.comparator = this.REVERSE_COMPARATOR;
+      this.comparator = compareFunction;
     
   }
 }
