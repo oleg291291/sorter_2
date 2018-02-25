@@ -7,10 +7,6 @@ this.compareNumeric = function compareNumeric(a, b) {
       if (a > b) return 1;
       if (a < b) return -1;
     }
-this.REVERSE_COMPARATOR = function compareNumeric(b, a) {
-      if (a > b) return 1;
-      if (a < b) return -1;
-    }
 
 
   this.comparator = this.compareNumeric;
