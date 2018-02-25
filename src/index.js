@@ -2,11 +2,14 @@ class Sorter {
   constructor() {
     // your implementation
     this.arr = [];
-//this.comparator = compareNumeric;
-this.compareNumeric = function compareNumeric(a, b) {
-  if (a > b) return 1;
-  if (a < b) return -1;
-}
+
+    this.compareNumeric = function compareNumeric(a, b) {
+      if (a > b) return 1;
+      if (a < b) return -1;
+
+
+
+    }
 
   }
 
@@ -34,15 +37,15 @@ this.compareNumeric = function compareNumeric(a, b) {
   sort(indices) {
     // your implementation
 
-  var indicesSorted = indices.sort(this.compareNumeric);
-  var selected = [];
-   for(var i = 0; i<indicesSorted.length; i++){
-     selected.push(this.arr[indicesSorted[i]]);
-   }
-   var sorted = selected.sort(this.compareNumeric);
-   for(var k = 0; k<sorted.length; k++){
-     this.arr[indicesSorted[k]] = sorted[k];
-   }
+    var indicesSorted = indices.sort(this.compareNumeric);
+    var selected = [];
+    for (var i = 0; i < indicesSorted.length; i++) {
+      selected.push(this.arr[indicesSorted[i]]);
+    }
+    var sorted = selected.sort(this.compareNumeric);
+    for (var k = 0; k < sorted.length; k++) {
+      this.arr[indicesSorted[k]] = sorted[k];
+    }
 
 
 
@@ -50,8 +53,9 @@ this.compareNumeric = function compareNumeric(a, b) {
 
   setComparator(compareFunction) {
     // your implementation
-
+    
+      this.compareNumeric = compareFunction
+    
   }
 }
-
 module.exports = Sorter;
